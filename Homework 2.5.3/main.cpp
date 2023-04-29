@@ -67,6 +67,7 @@ public:
 		if (check()) { std::cout << "Правильная "<<std::endl; }
 		else { std::cout << "Неправильная "<<std::endl; }
 		std::cout << "Количество сторон: " << get_sides()<<std::endl;
+		
 	};
 
 };
@@ -76,7 +77,9 @@ public:
 
 	triangle(int a, int b, int c, int  A, int B, int C) {
 		sides = 3;
-		this->a = a; this->b = b; this->c = c; this->A = A; this->B = B; this->C = C;  name = "Треугольник: ";
+		this->a = a; this->b = b; this->c = c;
+		this->A = A; this->B = B; this->C = C;
+		name = "Треугольник ";
 	}
 	bool check() override{
 		this->A;
@@ -89,6 +92,15 @@ public:
 		else { return false; }
 }
 
+	void print_info() override {
+		std::cout << std::endl;
+		figure::print_info();
+		std::cout << "Стороны: " << get_a() << " " << get_b() << " " << get_c() << std::endl;
+		std::cout << "Углы: " << get_A() << " " << get_B() << " " << get_C() << std::endl;
+		std::cout << std::endl;
+
+	}
+
 };
 
 
@@ -97,7 +109,31 @@ class quadrangle:public figure {
 public:
 
 	quadrangle(int a, int b, int c, int d, int  A, int B, int C, int D) {
-		this->a = a; this->b = b; this->c = c; this->d = d; this->A = A; this->B = B; this->C = C; this->D = D; name = "Четырёхугольник: ";
+		sides = 4;
+		this->a = a; this->b = b; this->c = c; this->d = d;
+		this->A = A; this->B = B; this->C = C; this->D = D;
+		name = "Четырёхугольник ";
+	}
+
+	bool check() override {
+		this->A;
+		this->B;
+		this->C;
+		this->sides;
+		if (((sides == 4) && (A + B + C + D) == 360)) {
+
+			return true;
+		}
+		else { return false; }
+	}
+
+	void print_info() override {
+		std::cout << std::endl;
+		figure::print_info();
+		std::cout << "Стороны: " << get_a() << " " << get_b() << " " << get_c() << " " << get_d() << std::endl;
+		std::cout << "Углы: " << get_A() << " " << get_B() << " " << get_C() << " " << get_D() << std::endl;
+		std::cout << std::endl;
+
 	}
 
 	
@@ -105,30 +141,19 @@ public:
 
 
 
-void print (triangle print) {
-
-	figure* wow = &print;
-	wow->print_info();
-	
-	std::cout << "Стороны: " << print.get_a() << " " << print.get_b() << " " << print.get_c()  << std::endl;
-	std::cout << "Углы: " << print.get_A() << " " << print.get_B() << " " << print.get_C() << std::endl;
-	std::cout << std::endl;
-}
 
 
 int main() {
 	setlocale(LC_ALL, "Russian");
 
 	figure one;
-	triangle first(45, 33, 23, 60, 60, 60);
-	quadrangle second(84, 74, 65, 50, 46, 34, 22, 14);
+	triangle first(45, 33, 23, 30, 90, 60);
+	quadrangle second(84, 74, 65, 50, 80, 20, 130, 130);
 
 	
-	
-
-	
-	print(first);
-
+	one.print_info();
+	first.print_info();
+	second.print_info();
 	
 
 
