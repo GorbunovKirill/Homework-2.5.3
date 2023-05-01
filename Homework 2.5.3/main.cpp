@@ -155,18 +155,11 @@ bool check() override {
 	}
 
 public:
-	right_tri(int a, int b, int c, int  A, int B) :triangle(a,b,c,A,B,C){
+	right_tri(int a, int b, int c, int  A, int B) :triangle(a,b,c,A,B,90){
 		
-		C = 90;
 		this->a = a; this->b = b; this->c = c;
 		this->A = A; this->B = B;
 		name = "Прямоугольный треугольник ";
-	}
-
-	void print_info() override {
-		
-		triangle::print_info();
-
 	}
 
 
@@ -186,17 +179,11 @@ bool check() override {
 
 
 public:
-	isos_tri(int a, int b, int  A, int B) :triangle(a, b, c, A, B, C) {
-		C = A;
-		c = a;
-		this->a = a; this->b = b; this->c = c;
-		this->A = A; this->B = B; this->C = C;
+	isos_tri(int a, int b, int  A, int B) :triangle(a, b, a, A, B, A) {
+		
+		this->a = a; this->b = b; 
+		this->A = A; this->B = B; 
 		name = "Равнобедренный треугольник ";
-	}
-
-	void print_info() override {
-
-		triangle::print_info();
 	}
 
 };
@@ -214,17 +201,11 @@ protected:
 
 
 public:
-	equil_tri(int a) :triangle(a, b, c, A, B, C) {
-		A=B=C=60;
-		c=b=a;
-		this->a = a; this->b = b; this->c = c;
-		this->A = A; this->B = B; this->C = C;
+	equil_tri(int a) :triangle(a, a, a, 60, 60, 60) {
+		
+		this->a = a; 
+	
 		name = "Равносторонний треугольник ";
-	}
-
-	void print_info() override {
-
-		triangle::print_info();
 	}
 
 };
@@ -243,19 +224,10 @@ protected:
 
 
 public:
-	rectangle(int a, int b) :quadrangle(a, b, c,d, A, B, C,D) {
+	rectangle(int a, int b) :quadrangle(a, b, a ,b, 90, 90, 90,90) {
 		
-		A = B = C = D = 90;
-		c=a;
-		d = b;
-		this->a = a; this->b = b; this->c = c; this->d = d;
-		this->A = A; this->B = B; this->C = C; this->D = D;
+		this->a = a; this->b = b;
 		name = "Прямоугольник ";
-	}
-
-	void print_info() override {
-
-		quadrangle::print_info();
 	}
 
 };
@@ -273,17 +245,10 @@ protected:
 
 
 public:
-	square(int a) :quadrangle(a, b, c, d, A, B, C, D) {
-		A = B = C = D = 90;
-		b=c=d=a;
-		this->a = a; this->b = b; this->c = c; this->d = d;
-		this->A = A; this->B = B; this->C = C; this->D = D;
+	square(int a) :quadrangle(a, a, a, a, 90, 90, 90, 90) {
+		
+		this->a = a; 
 		name = "Квадрат ";
-	}
-
-	void print_info() override {
-
-		quadrangle::print_info();
 	}
 
 };
@@ -301,19 +266,11 @@ protected:
 
 
 public:
-	parallelogram(int a, int b,int A,int B) :quadrangle(a, b, c, d, A, B, C, D) {
-		C = A;
-		D = B;
-		c = a;
-		d = b;
-		this->a = a; this->b = b; this->c = c; this->d = d;
-		this->A = A; this->B = B; this->C = C; this->D = D;
+	parallelogram(int a, int b,int A,int B) :quadrangle(a, b, a, b, A, B, A, B) {
+	
+		this->a = a; this->b = b; 
+		this->A = A; this->B = B; 
 		name = "Параллелограмм ";
-	}
-
-	void print_info() override {
-
-		quadrangle::print_info();
 	}
 
 };
@@ -330,18 +287,11 @@ protected:
 	}
 
 public:
-	rhomb(int a,int A,int B) :quadrangle(a, b, c, d, A, B, C, D) {
-		C = A;
-		D = B;
-		b = c = d = a;
-		this->a = a; this->b = b; this->c = c; this->d = d;
-		this->A = A; this->B = B; this->C = C; this->D = D;
+	rhomb(int a,int A,int B) :quadrangle(a, a, a, a, A, B, A, B) {
+		
+		this->a = a; this->b = b; 
+		this->A = A; this->B = B; 
 		name = "Ромб ";
-	}
-
-	void print_info() override {
-
-		quadrangle::print_info();
 	}
 
 };
