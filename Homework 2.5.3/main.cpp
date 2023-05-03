@@ -157,8 +157,6 @@ bool check() override {
 public:
 	right_tri(int a, int b, int c, int  A, int B) :triangle(a,b,c,A,B,90){
 		
-		this->a = a; this->b = b; this->c = c;
-		this->A = A; this->B = B;
 		name = "Прямоугольный треугольник ";
 	}
 
@@ -180,9 +178,7 @@ bool check() override {
 
 public:
 	isos_tri(int a, int b, int  A, int B) :triangle(a, b, a, A, B, A) {
-		
-		this->a = a; this->b = b; 
-		this->A = A; this->B = B; 
+	
 		name = "Равнобедренный треугольник ";
 	}
 
@@ -203,8 +199,6 @@ protected:
 public:
 	equil_tri(int a) :triangle(a, a, a, 60, 60, 60) {
 		
-		this->a = a; 
-	
 		name = "Равносторонний треугольник ";
 	}
 
@@ -225,8 +219,7 @@ protected:
 
 public:
 	rectangle(int a, int b) :quadrangle(a, b, a ,b, 90, 90, 90,90) {
-		
-		this->a = a; this->b = b;
+	
 		name = "Прямоугольник ";
 	}
 
@@ -247,7 +240,6 @@ protected:
 public:
 	square(int a) :quadrangle(a, a, a, a, 90, 90, 90, 90) {
 		
-		this->a = a; 
 		name = "Квадрат ";
 	}
 
@@ -268,8 +260,6 @@ protected:
 public:
 	parallelogram(int a, int b,int A,int B) :quadrangle(a, b, a, b, A, B, A, B) {
 	
-		this->a = a; this->b = b; 
-		this->A = A; this->B = B; 
 		name = "Параллелограмм ";
 	}
 
@@ -288,9 +278,7 @@ protected:
 
 public:
 	rhomb(int a,int A,int B) :quadrangle(a, a, a, a, A, B, A, B) {
-		
-		this->a = a; this->b = b; 
-		this->A = A; this->B = B; 
+	
 		name = "Ромб ";
 	}
 
